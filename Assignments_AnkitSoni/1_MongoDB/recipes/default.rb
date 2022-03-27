@@ -5,13 +5,13 @@
 # Copyright (c) 2022 The Authors, All Rights Reserved.
 
 
-template '/etc/yum.repos.d/mongodb-org-4.4.repo' do
-    source 'mongoDBContent.txt'
+template node['mongodb']['service_file'] do
+    source 'mongoDBContent.erb'
     owner 'root'
     mode 0644
   end
   
-  package 'mongodb-org'
+  package node['mongodb']['package']
   
   service 'mongod' do
     action [:enable, :start]
