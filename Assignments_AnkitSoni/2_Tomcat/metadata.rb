@@ -1,6 +1,6 @@
 name '2_Tomcat'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Ankit Soni'
+maintainer_email 'ankit100ni@gmail.com'
 license 'all_rights'
 description 'Installs/Configures 2_Tomcat'
 long_description 'Installs/Configures 2_Tomcat'
