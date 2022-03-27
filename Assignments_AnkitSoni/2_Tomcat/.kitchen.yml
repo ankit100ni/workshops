@@ -21,5 +21,5 @@ suites:
       - recipe[2_Tomcat::default]
     verifier:
       inspec_tests:
-        - test/recipes
+        - test/integration/default
     attributes:

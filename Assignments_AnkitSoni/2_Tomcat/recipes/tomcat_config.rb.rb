@@ -29,11 +29,13 @@ end
 execute 'extract_tomcat_binary' do
     command 'sudo tar xvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1'
     cwd '/tmp'
+    not_if { Dir.exist?('/opt/tomcat/bin') }
 end
 
 
 execute 'update_permissions' do
     command 'cd /opt/tomcat;sudo chgrp -R tomcat /opt/tomcat;sudo chmod -R g+r conf;sudo chmod g+x conf;sudo chown -R tomcat webapps/ work/ temp/ logs/'
+    only_if { ::File.exist?('/opt/tomcat/bin') }
 end
 
 
