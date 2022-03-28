@@ -17,8 +17,8 @@ template node['mongodb']['service_file'] do
     action [:enable, :start]
   end
   
-  execute 'mongodb' do
-    command 'sudo chkconfig mongod on'
-  end
+  # execute 'mongodb' do
+  #   command 'sudo chkconfig mongod on'
+  # end
   
   
